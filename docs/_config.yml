@@ -27,7 +27,7 @@ url: "http://yatinkare.github.io" # the base hostname & protocol for your site, 
 github_username:  YatinKare
 
 # Build settings
-remote_theme: pages-themes/midnight
+remote_theme: pages-themes/hacker@v0.2.0
 # theme: midnight
 plugins:
   - jekyll-remote-theme
