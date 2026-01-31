@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: #fdfdfd; 
 }
 
 /****************   Nav Section **********************/
@@ -140,6 +141,10 @@ section a:hover {
 
 .form-section {
   margin: 20px;
+}
+
+::placeholder {
+    color: white;
 }
 
 input {
