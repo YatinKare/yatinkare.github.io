@@ -1,7 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fdfdfd; 
+  background: #E9E9E9; 
+  background-image: url('../images/grid.svg');
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;;
+}
+
+a:link {
+  color: #49536e;
+}
+
+a:visited {
+  color: #7484af;
 }
 
 /****************   Nav Section **********************/
@@ -69,7 +83,7 @@ hr {
 section h3 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #7484af;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 section dl {
