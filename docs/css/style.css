@@ -105,6 +105,13 @@ section h3 {
   margin-left: 10px;
 }
 
+section h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #7484af;
+  margin-left: 10px;
+}
+
+
 section dl {
   display: grid;
   grid-template-rows: auto 1fr;
