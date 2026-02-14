@@ -39,6 +39,7 @@ nav {
 /***********************  Footer Section   **************************/
 footer {
   background-color: #1E2A38;	
+  color: white;
   /*
   box-shadow: 0 2px 5px,
               0 -2px 5px;
@@ -124,6 +125,10 @@ section ul {
   list-style-type: square;
 }
 
+.card li {
+  margin-bottom: 8px;
+}
+
 section a {
   text-decoration: none;
   color: #49536e; 
@@ -206,3 +211,11 @@ textarea {
   max-width: 40%;
 }
 
+button {
+  width: 40%;
+  padding: 5px;
+  background-color: #7484af;
+  color: white;
+  border-radius: 2px;
+  max-width: 40%;
+}
