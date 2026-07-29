@@ -2,7 +2,16 @@ const dialog = document.querySelector('#quick-links');
 const openButton = document.querySelector('#quick-open');
 const filter = document.querySelector('#quick-filter');
 const commandLinks = [...document.querySelectorAll('.command-list a')];
+const shortcutLabel = openButton.querySelector('kbd');
+const isAppleDevice = /Mac|iPhone|iPad|iPod/.test(navigator.userAgent);
 let previousFocus = null;
+
+shortcutLabel.textContent = isAppleDevice ? '⌘ K' : 'Ctrl K';
+
+function getFocusableElements() {
+  return [...dialog.querySelectorAll('input:not([disabled]), a[href]:not([hidden]), button:not([disabled]):not([tabindex="-1"])')]
+    .filter((element) => element.getClientRects().length > 0);
+}
 
 function openDialog() {
   previousFocus = document.activeElement;
@@ -26,8 +35,31 @@ document.addEventListener('keydown', (event) => {
   if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
     event.preventDefault();
     dialog.hidden ? openDialog() : closeDialog();
+    return;
   }
-  if (event.key === 'Escape' && !dialog.hidden) closeDialog();
+
+  if (event.key === 'Escape' && !dialog.hidden) {
+    closeDialog();
+    return;
+  }
+
+  if (event.key === 'Tab' && !dialog.hidden) {
+    const focusable = getFocusableElements();
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (!first) return;
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    } else if (!dialog.contains(document.activeElement)) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
 });
 
 filter.addEventListener('input', () => {

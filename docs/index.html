@@ -20,8 +20,8 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <button class="quick-trigger" id="quick-open" type="button" aria-haspopup="dialog" aria-controls="quick-links">
-    <span>Quick links</span><kbd>⌘ K</kbd>
+  <button class="quick-trigger" id="quick-open" type="button" aria-haspopup="dialog" aria-controls="quick-links" aria-label="Open quick links with Control or Command K">
+    <span>Quick links</span><kbd>Ctrl/⌘ K</kbd>
   </button>
 
   <main id="main" class="page-shell">
@@ -125,7 +125,7 @@
   </main>
 
   <div class="command-layer" id="quick-links" role="dialog" aria-modal="true" aria-labelledby="quick-title" hidden>
-    <button class="command-backdrop" type="button" data-close aria-label="Close quick links"></button>
+    <button class="command-backdrop" type="button" tabindex="-1" data-close aria-label="Close quick links"></button>
     <div class="command-box">
       <div class="command-heading"><span id="quick-title">Go somewhere</span><kbd>Esc</kbd></div>
       <input id="quick-filter" type="search" aria-label="Filter quick links" placeholder="Type a destination…" autocomplete="off">
