@@ -16,6 +16,9 @@
   let previousFocus;
   let shortcut = 'Ctrl K';
 
+  const prefersReducedMotion = () =>
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   $: visibleLinks = links.filter((link) => link.search.includes(query.trim().toLowerCase()));
 
   async function openDialog() {
@@ -78,9 +81,9 @@
 </button>
 
 {#if open}
-  <div bind:this={dialog} class="command-layer" role="dialog" aria-modal="true" aria-labelledby="quick-title" tabindex="-1" onkeydown={trapFocus} transition:fade={{ duration: 120 }}>
+  <div bind:this={dialog} class="command-layer" role="dialog" aria-modal="true" aria-labelledby="quick-title" tabindex="-1" onkeydown={trapFocus} transition:fade={{ duration: prefersReducedMotion() ? 0 : 120 }}>
     <button class="command-backdrop" type="button" tabindex="-1" aria-label="Close quick links" onclick={closeDialog}></button>
-    <div class="command-box" transition:fly={{ y: -8, duration: 150 }}>
+    <div class="command-box" transition:fly={{ y: prefersReducedMotion() ? 0 : -8, duration: prefersReducedMotion() ? 0 : 150 }}>
       <div class="command-heading"><span id="quick-title">Go somewhere</span><kbd>Esc</kbd></div>
       <input bind:this={filterInput} bind:value={query} type="search" aria-label="Filter quick links" placeholder="Type a destination…" autocomplete="off" onkeydown={activateFirst} />
       <div class="command-list">

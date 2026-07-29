@@ -4,6 +4,9 @@
   export let project;
   let expanded = false;
   let active = false;
+
+  const prefersReducedMotion = () =>
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 </script>
 
 {#if project.href}
@@ -31,7 +34,7 @@
       <h3>{project.name}</h3>
       <p>{project.description}</p>
       {#if expanded}
-        <p class="project-detail" transition:slide={{ duration: 180 }}>{project.detail}</p>
+        <p class="project-detail" transition:slide={{ duration: prefersReducedMotion() ? 0 : 180 }}>{project.detail}</p>
       {/if}
     </div>
     <button class="details-toggle" type="button" aria-expanded={expanded} onclick={() => (expanded = !expanded)}>
