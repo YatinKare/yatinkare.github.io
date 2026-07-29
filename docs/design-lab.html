@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Four portfolio directions for Yatin Kare.">
+  <title>Yatin Kare — Portfolio Design Lab</title>
+  <style>
+    :root{--lab-bg:#11110f;--lab-ink:#f2f0e8;--lab-muted:#aaa79d;--lab-line:#34332f;--lab-accent:#f3ff67}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--lab-bg);color:var(--lab-ink);font-family:Arial,Helvetica,sans-serif}
+    a{color:inherit}
+    button{font:inherit}
+    .labbar{position:sticky;top:0;z-index:1000;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:12px 18px;background:rgba(17,17,15,.96);border-bottom:1px solid var(--lab-line);backdrop-filter:blur(12px)}
+    .labbrand{font:700 12px/1.1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.11em;text-transform:uppercase;white-space:nowrap}
+    .labbrand span{color:var(--lab-accent)}
+    .labnav{display:flex;justify-content:center;gap:6px}
+    .labnav button{border:1px solid transparent;background:transparent;color:var(--lab-muted);padding:8px 11px;cursor:pointer;border-radius:3px;font-size:12px}
+    .labnav button:hover,.labnav button:focus-visible{color:var(--lab-ink);border-color:var(--lab-line)}
+    .labnav button.active{background:var(--lab-accent);color:#111;border-color:var(--lab-accent)}
+    .labmeta{font:11px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--lab-muted)}
+    .mock{display:none;min-height:calc(100vh - 58px)}
+    .mock.active{display:block;animation:arrive .25s ease-out}
+    @keyframes arrive{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
+    .skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:70px;z-index:2000;background:#fff;color:#000;padding:10px}
+
+    /* 01 — SIGNAL DESK */
+    #signal{--paper:#f1efdf;--ink:#17332e;--faint:#9ba99a;--orange:#f65b35;--mint:#b9e7c9;background:var(--paper);color:var(--ink);font-family:"Arial Narrow",Arial,sans-serif}
+    .s-shell{display:grid;grid-template-columns:290px minmax(0,1fr);min-height:calc(100vh - 58px)}
+    .s-rail{position:sticky;top:58px;height:calc(100vh - 58px);padding:28px;border-right:1px solid rgba(23,51,46,.24);display:flex;flex-direction:column;justify-content:space-between}
+    .s-mark{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em}.s-orbit{width:28px;height:28px;border:7px solid var(--orange);border-radius:50%;border-right-color:transparent;transform:rotate(-25deg)}
+    .s-rail h1{font:italic 400 clamp(42px,5vw,72px)/.87 Georgia,serif;letter-spacing:-.06em;margin:42px 0 22px}
+    .s-rail p{font-size:15px;line-height:1.5;max-width:220px}
+    .s-links{display:grid;gap:8px}.s-links a{text-decoration:none;border-bottom:1px solid rgba(23,51,46,.25);padding:8px 0;font-size:13px}.s-links a::after{content:" ↗";float:right;color:var(--orange)}
+    .s-main{padding:28px 4vw 80px}
+    .s-kicker,.s-label{font:700 11px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase}
+    .s-hero{min-height:56vh;display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--ink);padding:50px 0 26px}
+    .s-hero h2{max-width:970px;margin:13px 0 24px;font:400 clamp(45px,7.3vw,112px)/.86 Georgia,serif;letter-spacing:-.07em}
+    .s-hero h2 em{color:var(--orange);font-weight:400}
+    .s-proof{display:flex;justify-content:space-between;gap:30px;font-size:14px}.s-proof p{max-width:540px;margin:0;line-height:1.5}
+    .s-table-head,.s-project{display:grid;grid-template-columns:60px minmax(180px,.8fr) minmax(260px,1.4fr) 150px;gap:18px;align-items:center}
+    .s-table-head{padding:32px 0 12px;color:#61736d}.s-project{position:relative;border-top:1px solid rgba(23,51,46,.25);padding:24px 0;text-decoration:none;transition:.18s ease}
+    .s-project:last-child{border-bottom:1px solid rgba(23,51,46,.25)}
+    .s-project:hover{padding-left:10px;background:var(--mint)}.s-num{font:12px ui-monospace,monospace;color:#61736d}.s-project h3{font:400 clamp(25px,3vw,45px)/1 Georgia,serif;margin:0}.s-project p{margin:0;font-size:14px;line-height:1.45}.s-stack{text-align:right;font:11px ui-monospace,monospace}
+    .s-experience{display:grid;grid-template-columns:1fr 2fr;gap:50px;padding:70px 0}.s-timeline{border-top:1px solid var(--ink)}.s-role{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid rgba(23,51,46,.25)}.s-role strong{font:400 22px Georgia,serif}.s-role small{display:block;margin-top:5px;color:#61736d}
+
+    /* 02 — AGENT WORKSHOP */
+    #workshop{--black:#090a08;--ink:#eeefe8;--lime:#d7ff3f;--line:#34382f;--muted:#9ba08f;background:var(--black);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+    .w-shell{max-width:1440px;margin:auto;padding:22px 28px 80px}
+    .w-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px;font:11px ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.12em}.w-live{display:flex;align-items:center;gap:8px}.w-dot{width:8px;height:8px;background:var(--lime);border-radius:50%;box-shadow:0 0 0 5px rgba(215,255,63,.09)}
+    .w-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.7fr);gap:6vw;padding:70px 0 55px;border-bottom:1px solid var(--line)}
+    .w-hero h1{font:800 clamp(62px,10.2vw,166px)/.73 "Arial Narrow",Arial,sans-serif;letter-spacing:-.085em;text-transform:uppercase;margin:0}.w-hero h1 span{color:var(--lime)}
+    .w-intro{align-self:end}.w-intro p{font-size:17px;line-height:1.55;color:#c7cabb}.w-intro strong{color:#fff}.w-actions{display:flex;gap:18px;margin-top:30px}.w-actions a{text-decoration:none;font:12px ui-monospace,monospace;text-transform:uppercase;border-bottom:1px solid var(--lime);padding-bottom:5px}
+    .w-map{display:grid;grid-template-columns:220px 1fr;min-height:600px;border-bottom:1px solid var(--line)}
+    .w-map-title{padding:34px 25px 25px 0;border-right:1px solid var(--line)}.w-map-title h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 12px}.w-map-title p{font:12px/1.5 ui-monospace,monospace;color:var(--muted)}
+    .w-canvas{position:relative;min-height:580px;overflow:hidden;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px}
+    .w-node{position:absolute;width:210px;border:1px solid #555c49;background:#0e100c;padding:14px;box-shadow:6px 6px 0 #141610;transition:.2s}.w-node:hover{border-color:var(--lime);transform:translate(-2px,-2px)}.w-node small{display:block;color:var(--lime);font:10px ui-monospace,monospace;letter-spacing:.1em;margin-bottom:16px}.w-node strong{font-size:18px}.w-node p{font:11px/1.5 ui-monospace,monospace;color:var(--muted);margin:8px 0 0}.n1{left:8%;top:11%}.n2{right:9%;top:8%}.n3{left:37%;top:39%;border-color:var(--lime)}.n4{left:11%;bottom:8%}.n5{right:8%;bottom:10%}.w-path{position:absolute;height:1px;background:#687052;transform-origin:left center}.p1{width:31%;left:22%;top:24%;transform:rotate(21deg)}.p2{width:27%;left:52%;top:43%;transform:rotate(-29deg)}.p3{width:28%;left:23%;top:66%;transform:rotate(-26deg)}.p4{width:26%;left:54%;top:57%;transform:rotate(26deg)}
+    .w-projects{display:grid;grid-template-columns:220px 1fr}.w-projects>h2{font:13px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.12em;margin:0;padding:35px 25px 0 0;border-right:1px solid var(--line)}.w-list{padding-left:34px}.w-row{display:grid;grid-template-columns:1fr 2fr auto;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);text-decoration:none}.w-row h3{font-size:26px;margin:0}.w-row p{margin:0;color:var(--muted);line-height:1.45}.w-row b{color:var(--lime);font:11px ui-monospace,monospace;text-transform:uppercase}
+
+    /* 03 — QUIET ISLANDS */
+    #islands{--bg:#191817;--surface:#232220;--fg:#ece9e2;--muted:#a29e94;--border:#353330;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif}
+    .i-shell{max-width:1160px;margin:auto;display:grid;grid-template-columns:minmax(260px,.75fr) minmax(480px,1.25fr);gap:7vw;padding:56px 30px 100px}
+    .i-left{position:sticky;top:116px;align-self:start;height:max-content}.i-profile{display:inline-flex;align-items:center;gap:12px;background:var(--surface);color:var(--fg);font:inherit;border:1px solid var(--border);border-radius:28px;padding:6px 8px 6px 6px;cursor:pointer}.i-profile img{width:42px;height:42px;border-radius:50%;object-fit:cover}.i-profile div{min-width:145px}.i-profile strong,.i-profile small{display:block}.i-profile small{color:var(--muted);margin-top:3px}.i-key{border:1px solid #484641;border-radius:5px;padding:5px;color:var(--muted);font:10px ui-monospace,monospace}
+    .i-left h1{font:italic 400 clamp(42px,5vw,74px)/.95 Georgia,serif;letter-spacing:-.05em;margin:70px 0 22px}.i-left p{color:var(--muted);line-height:1.65;max-width:390px}.i-left p strong{color:var(--fg)}.i-actions{display:flex;align-items:center;gap:15px;margin-top:30px}.i-copy{background:var(--fg);border:0;color:#171614;border-radius:22px;padding:12px 17px;cursor:pointer}.i-actions a{text-decoration:none;color:var(--muted);font-size:12px}.i-actions a:hover{color:var(--fg)}
+    .i-main{min-width:0;padding-top:90px}.i-role>div{min-width:0;overflow-wrap:anywhere}.i-wave{height:8px;margin:56px 0;background:#3a3834;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='8' viewBox='0 0 22 8'%3E%3Cpath d='M0 7 L11 1 L22 7' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E") repeat-x center/22px 8px}.i-section h2{font:italic 400 27px Georgia,serif;margin:0 0 30px}.i-role{display:grid;grid-template-columns:120px 1fr;gap:24px;margin-bottom:34px}.i-role time{font-size:12px;color:var(--muted)}.i-role h3{font-size:18px;margin:0 0 10px}.i-role p{color:var(--muted);font-size:14px;line-height:1.55;margin:0}.i-role .tags{margin-top:12px;color:#d5d2ca;font:10px ui-monospace,monospace;word-spacing:9px}.i-open{display:grid;gap:1px;background:var(--border);border:1px solid var(--border)}.i-open a{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:15px;padding:17px;background:var(--bg);text-decoration:none;transition:.2s}.i-open a:hover{background:var(--surface)}.i-open b{font-size:15px}.i-open span{display:block;color:var(--muted);font-size:12px;margin-top:4px}.i-open code{color:var(--muted);font-size:10px}
+    .i-command{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;place-items:start center;padding-top:16vh;z-index:1200}.i-command.open{display:grid}.i-command-box{width:min(520px,90vw);background:#22211f;border:1px solid #4b4944;border-radius:13px;box-shadow:0 30px 90px #000;padding:10px}.i-command input{width:100%;background:#191817;border:0;border-bottom:1px solid #3b3935;color:#fff;padding:14px;outline:none}.i-command a{display:flex;justify-content:space-between;text-decoration:none;padding:12px 14px;color:#d6d2ca}.i-command a:hover{background:#2b2926;border-radius:7px}
+
+    /* 04 — FIELD NOTES */
+    #field{--cream:#f4f0e5;--ink:#191a18;--blue:#2047e8;--red:#d32c27;--rule:#bbb7ab;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+    .f-shell{padding:22px 3vw 100px;max-width:1500px;margin:auto}
+    .f-mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;border-top:5px solid var(--ink);border-bottom:1px solid var(--ink);padding:12px 0}.f-mast strong{font:900 clamp(27px,4vw,56px)/1 Arial,sans-serif;letter-spacing:-.07em;text-transform:uppercase}.f-mast .f-mid{font:italic 14px Georgia,serif}.f-mast .f-right{text-align:right;font:11px ui-monospace,monospace;text-transform:uppercase}
+    .f-hero{display:grid;grid-template-columns:1.7fr .7fr;gap:4vw;padding:45px 0;border-bottom:1px solid var(--ink)}.f-hero h1{font:400 clamp(60px,9vw,140px)/.77 Georgia,serif;letter-spacing:-.075em;margin:0}.f-hero h1 em{color:var(--blue);font-weight:400}.f-deck{align-self:end}.f-deck p{font:20px/1.45 Georgia,serif}.f-contact{font:11px ui-monospace,monospace;text-transform:uppercase;display:flex;gap:20px;margin-top:25px}.f-contact a{text-decoration-thickness:1px;text-underline-offset:4px}
+    .f-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;border-bottom:1px solid var(--ink)}.f-story{padding:28px}.f-story+ .f-story{border-left:1px solid var(--rule)}.f-label{font:700 10px ui-monospace,monospace;color:var(--red);text-transform:uppercase;letter-spacing:.12em}.f-story h2{font:400 clamp(28px,3vw,46px)/1 Georgia,serif;margin:15px 0}.f-story p{font-size:15px;line-height:1.55}.f-story .drop:first-letter{float:left;font-size:70px;line-height:.7;padding:9px 8px 0 0;color:var(--blue)}
+    .f-diagram{height:260px;margin-top:25px;border:1px solid var(--ink);position:relative;background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(25,26,24,.08) 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(25,26,24,.08) 24px)}.f-diagram span{position:absolute;border:1px solid var(--ink);background:var(--cream);padding:8px;font:10px ui-monospace,monospace}.f-diagram .a{left:5%;top:16%}.f-diagram .b{right:6%;top:12%}.f-diagram .c{left:35%;bottom:15%;background:var(--blue);color:#fff;border-color:var(--blue)}.f-line{position:absolute;height:1px;background:var(--ink);transform-origin:left}.fl1{width:45%;left:18%;top:35%;transform:rotate(17deg)}.fl2{width:40%;left:52%;top:36%;transform:rotate(142deg)}
+    .f-index{padding:34px 0}.f-index h2{font:11px ui-monospace,monospace;text-transform:uppercase;letter-spacing:.13em}.f-project{display:grid;grid-template-columns:45px 1.2fr 2fr auto;gap:20px;padding:17px 0;border-top:1px solid var(--rule);align-items:baseline;text-decoration:none}.f-project:last-child{border-bottom:1px solid var(--rule)}.f-project:hover .f-pname{color:var(--blue)}.f-pname{font-size:25px}.f-project p{font:14px/1.4 Arial,sans-serif;margin:0}.f-project code{font-size:10px}
+
+    @media(max-width:850px){
+      .labbar{grid-template-columns:1fr auto}.labmeta{display:none}.labnav{justify-content:flex-end;overflow:auto}.labnav button{padding:7px}.s-shell{grid-template-columns:1fr}.s-rail{position:relative;top:0;height:auto;border-right:0;border-bottom:1px solid rgba(23,51,46,.24);display:block}.s-rail h1{font-size:56px;margin:28px 0 15px}.s-links{grid-template-columns:repeat(3,1fr);margin-top:30px}.s-table-head{display:none}.s-project{grid-template-columns:38px 1fr}.s-project p,.s-stack{grid-column:2;text-align:left}.s-experience{grid-template-columns:1fr}.w-hero{grid-template-columns:1fr}.w-hero h1{font-size:25vw}.w-map,.w-projects{grid-template-columns:1fr}.w-map-title,.w-projects>h2{border-right:0;border-bottom:1px solid var(--line)}.w-canvas{min-height:650px}.w-node{width:175px}.w-list{padding-left:0}.w-row{grid-template-columns:1fr}.i-shell{grid-template-columns:1fr}.i-left{position:relative;top:0}.i-main{padding-top:20px}.f-hero,.f-grid{grid-template-columns:1fr}.f-story+.f-story{border-left:0;border-top:1px solid var(--rule)}.f-mast{grid-template-columns:1fr auto}.f-mid{display:none}.f-project{grid-template-columns:35px 1fr}.f-project p,.f-project code{grid-column:2}}
+    @media(max-width:560px){.labbar{display:block}.labbrand{margin-bottom:8px}.labnav{justify-content:flex-start;gap:2px}.labnav button{min-height:44px;padding:8px 9px;font-size:10px}.s-main,.w-shell{padding-left:16px;padding-right:16px}.s-hero{min-height:auto;padding-top:48px}.s-proof{display:block}.s-role{grid-template-columns:1fr}.w-map{display:block}.w-canvas{min-height:auto;padding:18px;display:grid;gap:12px}.w-node{position:relative;inset:auto;width:auto}.w-path{display:none}.i-shell{padding-left:18px;padding-right:18px}.i-role{grid-template-columns:1fr}.i-main{padding-top:0}.f-shell{padding-left:16px;padding-right:16px}.f-hero h1{font-size:18vw}.f-mast .f-right{display:none}.f-project{grid-template-columns:28px 1fr}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#mock-content">Skip to mockup</a>
+  <header class="labbar">
+    <div class="labbrand">YK / <span>Design lab</span></div>
+    <nav class="labnav" aria-label="Choose a portfolio direction">
+      <button class="active" data-show="signal">01 Signal</button>
+      <button data-show="workshop">02 Workshop</button>
+      <button data-show="islands">03 Islands</button>
+      <button data-show="field">04 Field notes</button>
+    </nav>
+    <div class="labmeta">4 directions · 1 file</div>
+  </header>
+
+  <main id="mock-content">
+    <section class="mock active" id="signal" aria-label="Signal Desk mockup">
+      <div class="s-shell">
+        <aside class="s-rail">
+          <div><div class="s-mark"><span class="s-orbit"></span> YATIN KARE</div><h1>Software with<br>signal.</h1><p>Computer science student building useful systems across AI agents, data workflows, and the web.</p></div>
+          <div class="s-links"><a href="mailto:kareyatin@gmail.com">Email</a><a href="https://github.com/YatinKare">GitHub</a><a href="https://www.linkedin.com/in/yatin-kare">LinkedIn</a></div>
+        </aside>
+        <div class="s-main">
+          <header class="s-hero"><span class="s-kicker">Athens, Georgia · Available May 2027</span><h2>I make complex workflows feel <em>obvious.</em></h2><div class="s-proof"><p>From retail systems and cloud data pipelines to a self-hosted agent lab, I care about software that shortens the distance between a question and a reliable answer.</p><span class="s-label">Scroll for selected work ↓</span></div></header>
+          <section aria-labelledby="s-work"><div class="s-table-head"><span>No.</span><span id="s-work">Selected work</span><span>What changed</span><span>Shape</span></div>
+            <article class="s-project"><span class="s-num">01</span><h3>Hermes Home Lab</h3><p>A self-hosted assistant layer connecting scheduled automations, browser workflows, research tools, and private dashboards.</p><span class="s-stack">HERMES · MCP · TAILSCALE</span></article>
+            <a class="s-project" href="https://github.com/YatinKare/notebooklm-questions-workflow"><span class="s-num">02</span><h3>NotebookLM Workflow</h3><p>Drop in a question screenshot; get source-grounded answer cards and reasoning through a compact review UI.</p><span class="s-stack">PYTHON · SVELTE · DOCKER</span></a>
+            <a class="s-project" href="https://github.com/YatinKare/cf_ai_eventifyit"><span class="s-num">03</span><h3>EventifyIt</h3><p>Turns event images into calendar entries with extraction, validation, conflict checks, and one-click export.</p><span class="s-stack">TYPESCRIPT · CLOUDFLARE</span></a>
+            <a class="s-project" href="https://github.com/YatinKare/golang-cursor-usage"><span class="s-num">04</span><h3>Cursor Usage CLI</h3><p>A small Go tool for checking Cursor usage from the command line—the latest in a run of practical systems experiments.</p><span class="s-stack">GO · CLI</span></a>
+          </section>
+          <section class="s-experience"><div><span class="s-label">Experience / 2024–26</span><h2 style="font:400 42px Georgia,serif">Learning in production.</h2></div><div class="s-timeline"><div class="s-role"><span>2026 · Belk</span><div><strong>Retail Systems Software Engineer Intern</strong><small>Agent-assisted fulfillment investigation, SAML SSO, database and dashboard performance.</small></div></div><div class="s-role"><span>2025 · Cadent</span><div><strong>Machine Learning Engineer Intern</strong><small>Repeatable integration testing and production validation across GCP and AWS services.</small></div></div><div class="s-role"><span>2024 · Primerica</span><div><strong>Data Management Intern</strong><small>Governance automation, PI detection, Qlik pipelines, and secure secrets retrieval.</small></div></div></div></section>
+        </div>
+      </div>
+    </section>
+
+    <section class="mock" id="workshop" aria-label="Agent Workshop mockup">
+      <div class="w-shell"><header class="w-top"><span>Yatin Kare / Systems + Software</span><span class="w-live"><i class="w-dot"></i> Lab online</span></header>
+        <section class="w-hero"><h1>Make it<br><span>work.</span></h1><div class="w-intro"><p>I build software where <strong>agents, interfaces, and infrastructure</strong> meet—then test it against the messy real workflow, not just the happy path.</p><div class="w-actions"><a href="mailto:kareyatin@gmail.com">Start a conversation</a><a href="https://github.com/YatinKare">View source</a></div></div></section>
+        <section class="w-map"><div class="w-map-title"><h2>Hermes Agent / Home Lab</h2><p>A working personal automation environment. Small, isolated tools stay dependable; the agent coordinates them.</p></div><div class="w-canvas"><i class="w-path p1"></i><i class="w-path p2"></i><i class="w-path p3"></i><i class="w-path p4"></i><article class="w-node n1"><small>INPUT / 01</small><strong>Discord + Telegram</strong><p>Human requests, recurring briefs, and bounded approvals.</p></article><article class="w-node n2"><small>TOOL / 02</small><strong>Browser workflows</strong><p>Persistent sessions with visual verification and safety boundaries.</p></article><article class="w-node n3"><small>ORCHESTRATOR / 03</small><strong>Hermes Agent</strong><p>Routes tasks across tools, skills, subagents, and memory.</p></article><article class="w-node n4"><small>SCHEDULE / 04</small><strong>Watchdogs</strong><p>Quiet automation that only interrupts when action is needed.</p></article><article class="w-node n5"><small>OUTPUT / 05</small><strong>Private dashboards</strong><p>Research, queues, and status surfaces over the tailnet.</p></article></div></section>
+        <section class="w-projects"><h2>Build log</h2><div class="w-list"><a class="w-row" href="https://github.com/YatinKare/golang-p2p-file-sync"><h3>Peer-to-peer file sync</h3><p>A Go systems exercise exploring filesystem watchers, goroutines, mutexes, and Tailnet transport.</p><b>Recent / Go ↗</b></a><a class="w-row" href="https://github.com/YatinKare/notebooklm-questions-workflow"><h3>NotebookLM answer workflow</h3><p>A screenshot-to-source-grounded-review pipeline with a Python API, Svelte interface, and container deployment.</p><b>Recent / AI ↗</b></a><a class="w-row" href="https://github.com/YatinKare/multi-person-ai-trip-planner-"><h3>TripSync</h3><p>Parallel research and iterative refinement turn multiple travelers’ preferences into ranked destinations and plans.</p><b>Agents / Svelte ↗</b></a></div></section>
+      </div>
+    </section>
+
+    <section class="mock" id="islands" aria-label="Quiet Islands mockup">
+      <div class="i-shell"><aside class="i-left"><button class="i-profile" id="command-open" aria-label="Open quick links"><img src="images/Headshot.jpg" alt="Yatin Kare"><div><strong>Yatin Kare</strong><small>Software engineer</small></div><span class="i-key">Ctrl K</span></button><h1>Hey, I’m Yatin.</h1><p>I’m a computer science student at <strong>the University of Georgia</strong>. I build <strong>AI-assisted products</strong>, cloud data workflows, and the small tools that make computers more useful.</p><p>Most recently, I worked on retail systems at <strong>Belk</strong>. At home, I run a <strong>Hermes Agent lab</strong> that connects automations, research, and private dashboards.</p><div class="i-actions"><button class="i-copy" data-email="kareyatin@gmail.com">Copy my email</button><a href="https://github.com/YatinKare">GitHub</a><a href="https://www.linkedin.com/in/yatin-kare">LinkedIn</a></div></aside>
+        <div class="i-main"><div class="i-wave"></div><section class="i-section"><h2>Experience</h2><article class="i-role"><time>2026<br>Charlotte, NC</time><div><h3>Retail Systems Software Engineer Intern · Belk</h3><p>Shipped an agent-assisted fulfillment dashboard workflow, built database and SAML authentication, and improved the performance of heavy operational views.</p><div class="tags">GOOGLE ADK MCP MYSQL SAML</div></div></article><article class="i-role"><time>2025<br>New York, NY</time><div><h3>Machine Learning Engineer Intern · Cadent</h3><p>Automated integration tests across more than 50 cloud services and validated Airflow transformations spanning Dataproc and BigQuery.</p><div class="tags">PYTHON AIRFLOW GCP AWS</div></div></article><article class="i-role"><time>2024<br>Duluth, GA</time><div><h3>Data Management Intern · Primerica</h3><p>Automated governance at 5,000-table scale and built data pipelines spanning Collibra, Qlik, DB2, and Vault.</p><div class="tags">PYTHON C PANDAS QLIK</div></div></article></section><div class="i-wave"></div>
+          <section class="i-section"><h2>Selected open work</h2><div class="i-open"><a href="https://github.com/YatinKare/golang-cursor-usage"><span>01</span><div><b>Cursor usage CLI</b><span>Usage stats from the command line.</span></div><code>Go ↗</code></a><a href="https://github.com/YatinKare/notebooklm-questions-workflow"><span>02</span><div><b>NotebookLM questions workflow</b><span>Question screenshots into grounded answer cards.</span></div><code>Python + Svelte ↗</code></a><a href="https://github.com/YatinKare/cf_ai_eventifyit"><span>03</span><div><b>EventifyIt</b><span>Event image to validated calendar entry.</span></div><code>Cloudflare ↗</code></a><a href="https://github.com/YatinKare/golang-p2p-file-sync"><span>04</span><div><b>Peer-to-peer file sync</b><span>A systems learning project in progress.</span></div><code>Go ↗</code></a></div></section></div></div>
+      <div class="i-command" id="command" role="dialog" aria-modal="true" aria-label="Quick links"><div class="i-command-box"><input aria-label="Filter quick links" placeholder="Type a destination…"><a href="mailto:kareyatin@gmail.com"><span>Email Yatin</span><kbd>↵</kbd></a><a href="https://github.com/YatinKare"><span>Open GitHub</span><kbd>G</kbd></a><a href="https://www.linkedin.com/in/yatin-kare"><span>Open LinkedIn</span><kbd>L</kbd></a></div></div>
+    </section>
+
+    <section class="mock" id="field" aria-label="Field Notes mockup">
+      <div class="f-shell"><header class="f-mast"><strong>Yatin Kare</strong><span class="f-mid">Field notes on useful software</span><span class="f-right">Athens, GA · Vol. 03 · 2026</span></header>
+        <section class="f-hero"><h1>Building the<br><em>shorter path.</em></h1><div class="f-deck"><p>I design software that removes the awkward steps between intent and outcome—from a flyer becoming a calendar event to an agent investigating a fulfillment issue.</p><div class="f-contact"><a href="mailto:kareyatin@gmail.com">Email</a><a href="https://github.com/YatinKare">GitHub</a><a href="https://www.linkedin.com/in/yatin-kare">LinkedIn</a></div></div></section>
+        <section class="f-grid"><article class="f-story"><span class="f-label">Cover story / Personal infrastructure</span><h2>The home lab is the project.</h2><p class="drop">Hermes is my self-hosted assistant layer: messaging in front, bounded tools underneath, and small verifiable workflows in between. It handles recurring research, browser tasks, private dashboards, and alerts without turning the whole setup into one fragile app.</p><div class="f-diagram"><i class="f-line fl1"></i><i class="f-line fl2"></i><span class="a">REQUESTS</span><span class="b">TOOLS + SKILLS</span><span class="c">HERMES AGENT</span></div></article><article class="f-story"><span class="f-label">Work / Belk</span><h2>Operational software, not a demo.</h2><p>At Belk, I worked on retail systems where traceability, data access, and speed matter. I shipped an agent-assisted investigation workflow, built authentication across database and SAML boundaries, and helped large operational views load faster.</p><p><strong>Measured outcomes:</strong> 65% faster investigation turnaround and 15% lower application latency, based on resume-reported results.</p></article><article class="f-story"><span class="f-label">Method / Across roles</span><h2>Make the invisible legible.</h2><p>At Cadent, that meant integration testing across 50+ GCP and AWS services. At Primerica, it meant governing 5,000+ tables and finding personal information at scale. The recurring pattern is turning complicated systems into something teams can inspect and trust.</p><p><strong>Current toolkit:</strong> Python, TypeScript, Go, Svelte, FastAPI, MySQL, Google ADK, Cloudflare.</p></article></section>
+        <section class="f-index"><h2>Project index / recent and selected</h2><a class="f-project" href="https://github.com/YatinKare/notebooklm-questions-workflow"><span>01</span><span class="f-pname">NotebookLM workflow</span><p>Screenshot questions become grounded, reviewable answer cards.</p><code>2026 · Python/Svelte</code></a><a class="f-project" href="https://github.com/YatinKare/golang-cursor-usage"><span>02</span><span class="f-pname">Cursor Usage CLI</span><p>A focused Go utility for checking usage without leaving the terminal.</p><code>2026 · Go</code></a><a class="f-project" href="https://github.com/YatinKare/cf_ai_eventifyit"><span>03</span><span class="f-pname">EventifyIt</span><p>Vision extraction, validation, conflict checks, and calendar creation.</p><code>2026 · TypeScript</code></a><a class="f-project" href="https://github.com/YatinKare/multi-person-ai-trip-planner-"><span>04</span><span class="f-pname">TripSync</span><p>Parallel agents reconcile a group’s preferences into a trip plan.</p><code>SvelteKit · ADK</code></a></section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const tabs=[...document.querySelectorAll('.labnav button')];
+    const mocks=[...document.querySelectorAll('.mock')];
+    function showMock(id,updateHash=true){
+      const target=document.getElementById(id); if(!target)return;
+      tabs.forEach(b=>{const on=b.dataset.show===id;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
+      mocks.forEach(m=>m.classList.toggle('active',m.id===id));
+      if(updateHash)history.replaceState(null,'','#'+id);
+      window.scrollTo({top:0,behavior:'instant'});
+    }
+    tabs.forEach(b=>b.addEventListener('click',()=>showMock(b.dataset.show)));
+    const initial=location.hash.slice(1); if(mocks.some(m=>m.id===initial))showMock(initial,false);
+    document.querySelectorAll('.i-copy').forEach(btn=>btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(btn.dataset.email);btn.textContent='Email copied';setTimeout(()=>btn.textContent='Copy my email',1600)}catch{location.href='mailto:'+btn.dataset.email}}));
+    const modal=document.getElementById('command');
+    function setCommand(on){modal.classList.toggle('open',on);if(on)modal.querySelector('input').focus()}
+    document.getElementById('command-open').addEventListener('click',()=>setCommand(true));
+    modal.addEventListener('click',e=>{if(e.target===modal)setCommand(false)});
+    document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();setCommand(!modal.classList.contains('open'))}if(e.key==='Escape')setCommand(false)});
+    modal.querySelector('input').addEventListener('input',e=>{const q=e.target.value.toLowerCase();modal.querySelectorAll('a').forEach(a=>a.hidden=!a.textContent.toLowerCase().includes(q))});
+  </script>
+</body>
+</html>
