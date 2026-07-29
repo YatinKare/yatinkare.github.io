@@ -1,4 +1,5 @@
 <script>
+  import AmbientBackground from './lib/AmbientBackground.svelte';
   import InteractivePortrait from './lib/InteractivePortrait.svelte';
   import ProjectRow from './lib/ProjectRow.svelte';
   import QuickLinks from './lib/QuickLinks.svelte';
@@ -68,6 +69,7 @@
 </script>
 
 <a class="skip-link" href="#main">Skip to content</a>
+<AmbientBackground />
 <QuickLinks />
 
 <main id="main" class="page-shell">
