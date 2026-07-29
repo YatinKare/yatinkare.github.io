@@ -22,10 +22,20 @@
   >
     <span class="project-number">{project.number}</span>
     <div>
-      <h3>{project.name}<span class="row-arrow" aria-hidden="true">↗</span></h3>
+      <h3>
+        {project.name}<span class="row-arrow" aria-hidden="true">
+          <svg viewBox="0 0 12 12" focusable="false"><path d="M3 9 9 3M4 3h5v5" /></svg>
+        </span>
+      </h3>
       <p>{project.description}</p>
     </div>
-    <span class="project-meta">{active ? 'Open source ↗' : project.meta}</span>
+    <span class="project-meta">
+      {#if active}
+        Open source <svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M3 9 9 3M4 3h5v5" /></svg>
+      {:else}
+        {project.meta}
+      {/if}
+    </span>
   </a>
 {:else}
   <article class="project-row private-project" class:is-expanded={expanded}>

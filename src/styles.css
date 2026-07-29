@@ -55,7 +55,9 @@ kbd{font:400 10px "DM Mono",monospace;color:var(--muted)}
 .project-link:hover::after,.project-link:focus-visible::after,.private-project.is-expanded::after{transform:scaleX(1)}
 .project-number{padding-top:3px;color:#656a62;font:400 10px "DM Mono",monospace}
 .project-row h3{margin:0 0 5px;font-size:16px;font-weight:500}
-.row-arrow{display:inline-block;margin-left:7px;color:var(--accent);opacity:0;transform:translate(-5px,4px);transition:opacity .16s ease,transform .2s cubic-bezier(.22,1,.36,1)}
+.row-arrow{display:inline-flex;width:12px;height:12px;margin-left:7px;vertical-align:-1px;color:var(--accent);opacity:0;transform:translate(-5px,4px);transition:opacity .16s ease,transform .2s cubic-bezier(.22,1,.36,1)}
+.row-arrow svg,.external-arrow{width:12px;height:12px;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:square;stroke-linejoin:miter}
+.external-arrow{display:inline-block;margin-left:3px;vertical-align:-2px}
 .project-link:hover .row-arrow,.project-link:focus-visible .row-arrow{opacity:1;transform:translate(0,0)}
 .project-row p{max-width:580px;margin:0;color:#949990;font-size:13px;line-height:1.6}
 .project-meta,.details-toggle{padding-top:3px;color:#777c74;font:400 10px "DM Mono",monospace;white-space:nowrap;text-transform:uppercase;letter-spacing:.025em}
