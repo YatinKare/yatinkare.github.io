@@ -1,125 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Yatin Kare</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yatin Kare is a computer science student building practical AI-agent workflows, cloud data automation, and developer tools.">
+  <meta name="theme-color" content="#111310">
+  <meta property="og:title" content="Yatin Kare — Software Engineer">
+  <meta property="og:description" content="Practical AI-agent workflows, cloud data automation, and developer tools.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yatinkare.com/">
+  <meta property="og:image" content="https://yatinkare.com/images/Headshot.jpg">
+  <title>Yatin Kare — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
 </head>
-
 <body>
-    <nav>
-        <p>Yatin Kare</p>
-        <a href="contact.html">Contact: Yatin Kare</a>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <header>
-            <img src="images/Headshot.jpg" alt="Yatin's Headshot" width="200" height="200" />
-            <h1>Yatin Kare</h1>
-        </header>
-    <div class="description">
-        <p class="address"> <i class="fa-solid fa-address-book"></i> Athens GA <i
-                class="fa-solid fa-phone"></i>  Phone: +1 (248) 916-6740 <i class="fa-solid fa-at"></i>  Email:
-            yatin.kare@gmail.com</p>
+  <button class="quick-trigger" id="quick-open" type="button" aria-haspopup="dialog" aria-controls="quick-links">
+    <span>Quick links</span><kbd>⌘ K</kbd>
+  </button>
 
-        <p class="tagline"><i>Exploring multi-agent systems to solve real-world problems</i>. </p>
-
-        <p class="tagline">Currently building: <b><a target="_blank" rel="noopener noreferrer" href="https://github.com/YatinKare/multi-person-ai-trip-planner-">TripSync: An AI-Assisted Trip Planner</a></b></p>
-    </div>
-    <hr />
-    <section class="Education">
-        <h2>Education</h2>
-        <dl>
-            <dt>University of Georgia</dt>
-            <dd><b>Relevant Courses</b>: Data Structures, Algorithms, Web Design, Intro to AI</dd>
-            <dt>Degree: B.S. in Computer Science</dt>
-            <dd>May 2027</dd>
-        </dl>
-    </section>
-    <section class="Honors and Awards">
-        <h2>Honors and Awards</h2>
-        <dl>
-            <dt>AWS Cloud Practitioner Certified</dt>
-            <dd>Dec. 2025</dd>
-            <dt>AWS AI Practitioner Certified</dt>
-            <dd>Jan. 2026</dd>
-        </dl>
-    </section>
-    <section class="Skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Svelte/SvelteKit</li>
-            <li>TypeScript</li>
-            <li>Python</li>
-            <li>C</li>
-            <li>Java</li>
-        </ul>
-
-    </section>
-    <section class="Leadership and Experience">
-        <h2>Leadership and Experience</h2>
-        <dl>
-            <dt><a href="https://www.cadent.com/">Machine Learning Engineer Intern @ Cadent</a></dt>
-            <dd>Jan. 2025 &mdash; May 2025</dd>
-            <dt><a href="https://www.primerica.com/public/">Data Engineer Intern @ Primerica</a></dt>
-            <dd>May. 2024 &mdash; Dec 2024</dd>
-        </dl>
-
-    </section>
-    <section class="Projects">
-        <h2>Projects</h2>
-        <div class="three-col">
-
-            <div class="card">
-                <h3>Python Polymarket Arbitrage</h3>
-                <img src="images/python-arbitrage-logo.png" alt="Python Polymarket Arbitrage Logo" />
-                <ul>
-                    <li>Python CLI that analyzes Polymarket option markets to surface cross-market arbitrage
-                        opportunities.</li>
-                    <li>Computes risk-neutral fair values using Black–Scholes and touch-barrier option pricing models.
-                    </li>
-                    <li>Generates structured arbitrage reports with implied probabilities, mispricing deltas, and risk
-                        bounds.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>EventifyIt</h3>
-                <img src="images/eventify-it-logo.png" alt="EventifyIt Project Logo" />
-                <ul>
-                    <li>Notebook-based tool that converts event flyers into Google Calendar invites with minimal user
-                        input.</li>
-                    <li>Orchestrated a multi-agent workflow (Google ADK) for OCR, entity extraction, and cross-field
-                        validation.</li>
-                    <li>Deployed on Cloudflare Pages with real-time processing and instant calendar export.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>LearnX</h3>
-                <img src="images/learnx-logo.png" alt="LearnX Project Logo" />
-                <ul>
-                    <li>Full-stack web platform that transforms slide decks and audio into interactive, web-based
-                        lectures.</li>
-                    <li>Built with SvelteKit and FastAPI to support real-time uploads, processing, and playback.</li>
-                    <li>Processed long-form audio using AI transcription pipelines and enforced structured JSON outputs
-                        for downstream rendering.</li>
-                </ul>
-            </div>
-
+  <main id="main" class="page-shell">
+    <aside class="intro" aria-labelledby="intro-title">
+      <div class="identity">
+        <img class="headshot" src="images/Headshot.jpg" alt="Portrait of Yatin Kare" width="132" height="132">
+        <div class="identity-copy">
+          <strong>Yatin Kare</strong>
+          <span>Software engineer</span>
+          <span>Athens, Georgia</span>
         </div>
-    </section>
+      </div>
 
-    <footer>
-        <p><i class="fa-regular fa-copyright"></i> <a href="contact.html">Yatin Kare</a> <a
-                href="https://www.linkedin.com/in/yatin-kare/"><i class="fa-brands fa-linkedin"></i></a></p>
-    </footer>
+      <h1 id="intro-title">Hi, I’m Yatin.</h1>
+      <p>I’m a computer science student at <strong>the University of Georgia</strong>. I build <strong>AI-assisted products</strong>, cloud data workflows, and small tools that make computers more useful.</p>
+      <p>Most recently, I worked on retail systems at <strong>Belk</strong>. At home, I run a <strong>Hermes Agent lab</strong> connecting automations, research, and private dashboards.</p>
+
+      <nav class="intro-actions" aria-label="Contact and profiles">
+        <button class="copy-email" type="button" data-email="kareyatin@gmail.com">Copy my email</button>
+        <a href="https://github.com/YatinKare" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/yatin-kare" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <div class="wave" aria-hidden="true"></div>
+
+      <section class="section" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+
+        <article class="role">
+          <div class="role-date"><time datetime="2026-05">2026</time><span>Charlotte, NC</span></div>
+          <div class="role-body">
+            <h3>Retail Systems Software Engineer Intern <span>· Belk</span></h3>
+            <p>Shipped an agent-assisted fulfillment investigation workflow, built database and SAML authentication, and improved the performance of large operational views.</p>
+            <ul class="role-tech" aria-label="Technologies"><li>Google ADK</li><li>MCP</li><li>MySQL</li><li>SAML</li></ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role-date"><time datetime="2025-01">2025</time><span>New York, NY</span></div>
+          <div class="role-body">
+            <h3>Machine Learning Engineer Intern <span>· Cadent</span></h3>
+            <p>Automated integration tests across more than 50 cloud services and validated Airflow transformations spanning Dataproc and BigQuery.</p>
+            <ul class="role-tech" aria-label="Technologies"><li>Python</li><li>Airflow</li><li>GCP</li><li>AWS</li></ul>
+          </div>
+        </article>
+
+        <article class="role">
+          <div class="role-date"><time datetime="2024-06">2024</time><span>Duluth, GA</span></div>
+          <div class="role-body">
+            <h3>Data Management Intern <span>· Primerica</span></h3>
+            <p>Automated governance at 5,000-table scale and built data pipelines spanning Collibra, Qlik, DB2, and Vault.</p>
+            <ul class="role-tech" aria-label="Technologies"><li>Python</li><li>C</li><li>Pandas</li><li>Qlik</li></ul>
+          </div>
+        </article>
+      </section>
+
+      <div class="wave" aria-hidden="true"></div>
+
+      <section class="section" aria-labelledby="projects-title">
+        <h2 id="projects-title">Interesting projects</h2>
+        <div class="project-list">
+          <article class="project-row">
+            <span class="project-number">01</span>
+            <div><h3>Hermes Agent Home Lab</h3><p>A private, local-first environment for durable research, browser workflows, scheduled watchdogs, and dashboard-first automation.</p></div>
+            <span class="project-meta">Hermes · MCP</span>
+          </article>
+
+          <a class="project-row" href="https://github.com/YatinKare/notebooklm-questions-workflow" target="_blank" rel="noreferrer">
+            <span class="project-number">02</span>
+            <div><h3>NotebookLM questions workflow</h3><p>Turns question screenshots into grounded, reviewable answer cards using course source material.</p></div>
+            <span class="project-meta">Python · SvelteKit ↗</span>
+          </a>
+
+          <a class="project-row" href="https://github.com/YatinKare/cf_ai_eventifyit" target="_blank" rel="noreferrer">
+            <span class="project-number">03</span>
+            <div><h3>EventifyIt</h3><p>Converts event flyers into calendar invites through OCR, entity extraction, and cross-field validation.</p></div>
+            <span class="project-meta">Python · Google ADK ↗</span>
+          </a>
+
+          <a class="project-row" href="https://github.com/YatinKare/multi-person-ai-trip-planner-" target="_blank" rel="noreferrer">
+            <span class="project-number">04</span>
+            <div><h3>TripSync</h3><p>Reconciles a group’s preferences into ranked destinations and itineraries through parallel research.</p></div>
+            <span class="project-meta">SvelteKit · ADK ↗</span>
+          </a>
+
+          <a class="project-row" href="https://github.com/YatinKare/golang-cursor-usage" target="_blank" rel="noreferrer">
+            <span class="project-number">05</span>
+            <div><h3>Cursor usage CLI</h3><p>A focused Go utility for inspecting Cursor usage statistics from the command line.</p></div>
+            <span class="project-meta">Go ↗</span>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <span>Yatin Kare · 2026</span>
+        <a href="mailto:kareyatin@gmail.com">kareyatin@gmail.com</a>
+      </footer>
+    </div>
+  </main>
+
+  <div class="command-layer" id="quick-links" role="dialog" aria-modal="true" aria-labelledby="quick-title" hidden>
+    <button class="command-backdrop" type="button" data-close aria-label="Close quick links"></button>
+    <div class="command-box">
+      <div class="command-heading"><span id="quick-title">Go somewhere</span><kbd>Esc</kbd></div>
+      <input id="quick-filter" type="search" aria-label="Filter quick links" placeholder="Type a destination…" autocomplete="off">
+      <div class="command-list">
+        <a href="mailto:kareyatin@gmail.com" data-search="email contact"><span>Email Yatin</span><kbd>↵</kbd></a>
+        <a href="https://github.com/YatinKare" target="_blank" rel="noreferrer" data-search="github code projects"><span>Open GitHub</span><kbd>G</kbd></a>
+        <a href="https://www.linkedin.com/in/yatin-kare" target="_blank" rel="noreferrer" data-search="linkedin work profile"><span>Open LinkedIn</span><kbd>L</kbd></a>
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
