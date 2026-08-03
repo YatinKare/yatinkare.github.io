@@ -122,7 +122,7 @@
       </div>
     </section>
 
-    <footer>
+    <footer data-nosnippet>
       <span>Yatin Kare · 2026</span>
       <a href="mailto:kareyatin@gmail.com">kareyatin@gmail.com</a>
     </footer>

@@ -22,7 +22,7 @@
 <div class="portrait-frame" onpointermove={handlePointer} onpointerleave={reset}>
   <img
     class="headshot"
-    src="/images/Headshot.jpg"
+    src="/images/yatin-kare-software-engineer.jpg"
     alt="Portrait of Yatin Kare"
     width="132"
     height="132"
