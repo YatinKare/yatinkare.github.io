@@ -4,7 +4,7 @@ date: 2026-06-27
 description: Starting my Go journey by building a CLI that rolls unfinished tasks into each new daily note.
 hero: /images/blog-golang-daily-todo.png
 heroAlt: Abstract daily Markdown pages carrying unfinished tasks forward through a Go-powered command-line workflow
-featured: true
+featured: false
 draft: false
 substack: https://yatinx.substack.com/p/golang-daily-to-do-cli
 ---

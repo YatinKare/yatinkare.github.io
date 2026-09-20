@@ -24,6 +24,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://yatinkare.com/blog/first-24-days-in-korea/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yatinkare.com/images/blog-first-24-days-in-korea-sept5-seoul-fireworks.jpg</image:loc>
+      <image:title>My First 24 Days in Korea</image:title>
+      <image:caption>Fireworks over Seoul on September 5.</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://yatinkare.com/blog/golang-daily-to-do-cli/</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
