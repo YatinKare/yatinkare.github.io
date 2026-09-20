@@ -1,9 +1,14 @@
 <script>
   import AmbientBackground from './lib/AmbientBackground.svelte';
+  import BlogArticle from './lib/BlogArticle.svelte';
+  import BlogCollection from './lib/BlogCollection.svelte';
   import InteractivePortrait from './lib/InteractivePortrait.svelte';
   import ProjectRow from './lib/ProjectRow.svelte';
   import QuickLinks from './lib/QuickLinks.svelte';
   import WaveDivider from './lib/WaveDivider.svelte';
+
+  const route = window.location.pathname.replace(/\/$/, '') || '/';
+  const articleSlug = route.startsWith('/blog/') ? route.split('/').at(-1) : '';
 
   const roles = [
     {
@@ -68,6 +73,11 @@
   }
 </script>
 
+{#if articleSlug}
+  <BlogArticle slug={articleSlug} />
+{:else if route === '/blog'}
+  <BlogCollection />
+{:else}
 <a class="skip-link" href="#main">Skip to content</a>
 <AmbientBackground />
 <QuickLinks />
@@ -89,6 +99,7 @@
 
     <nav class="intro-actions" aria-label="Contact and profiles">
       <button class="copy-email" type="button" onclick={copyEmail}>{emailLabel}</button>
+      <a href="/blog">Writing</a>
       <a href="https://github.com/YatinKare" target="_blank" rel="noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/yatin-kare" target="_blank" rel="noreferrer">LinkedIn</a>
     </nav>
@@ -128,3 +139,4 @@
     </footer>
   </div>
 </main>
+{/if}

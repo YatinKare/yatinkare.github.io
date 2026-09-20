@@ -3,6 +3,7 @@
   import { fade, fly } from 'svelte/transition';
 
   const links = [
+    { label: 'Read my writing', href: '/blog', search: 'blog writing articles essays', key: 'W' },
     { label: 'Email Yatin', href: 'mailto:kareyatin@gmail.com', search: 'email contact', key: '↵' },
     { label: 'Open GitHub', href: 'https://github.com/YatinKare', search: 'github code projects', key: 'G', external: true },
     { label: 'Open LinkedIn', href: 'https://www.linkedin.com/in/yatin-kare', search: 'linkedin work profile', key: 'L', external: true },

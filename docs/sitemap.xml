@@ -17,4 +17,32 @@
       <image:title>Yatin Kare — Software Engineer</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://yatinkare.com/blog/</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yatinkare.com/blog/golang-daily-to-do-cli/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yatinkare.com/images/blog-golang-daily-todo.png</image:loc>
+      <image:title>Golang Daily To-Do CLI</image:title>
+      <image:caption>Daily Markdown pages carrying unfinished tasks into a new day through a Go CLI workflow.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://yatinkare.com/blog/turning-youtube-videos-into-finance-python-projects/</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://yatinkare.com/images/blog-ralph-loop-finance.png</image:loc>
+      <image:title>Turning YouTube Videos into Finance Python Projects Using the Ralph Loop</image:title>
+      <image:caption>A video signal becomes a recursive agent workflow and finance command-line tool.</image:caption>
+    </image:image>
+  </url>
 </urlset>
