@@ -18,7 +18,7 @@ I love Busan so far, I've been to so many places, met so many people, and experi
 
 On the other hand, I am slipping in behaviors that I would've either had in my routine or made time for before coming here. But instead of focusing on the things that I can't do, I'm going to stay in this mindset:
 
->[!quote] If I believe and tell myself that I can achieve, my imagination is the limit. Do everything with a smile and a passion, letting go of things that hold me back from opportunity.
+If I believe and tell myself that I can achieve, my imagination is the limit. Do everything with a smile and a passion, letting go of things that hold me back from opportunity.
 
 I had many doubts about what I would be doing and who I would be doing things with while in Korea. But for me, it's been an amazing journey so far.
 
