@@ -1,5 +1,5 @@
 ---
-title: Designing and Evaluating Agents — A comparison between t3 code and my internship agent
+title: "Learning About Agent Evals: Comparing T3 Code with My Internship Project"
 date: 2026-11-11
 description: Comparing how I evaluated an order investigation agent at Belk with how T3 Code tests agent tool use.
 hero: /images/blog-designing-evaluating-agents.png
