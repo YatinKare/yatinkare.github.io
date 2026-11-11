@@ -57,6 +57,16 @@
       description: 'A focused Go utility for inspecting Cursor usage statistics from the command line.',
       href: 'https://github.com/YatinKare/golang-cursor-usage',
     },
+    {
+      number: '06', name: 'Naver Maps MCP', meta: 'TypeScript · MCP',
+      description: 'An unofficial Model Context Protocol server that gives AI assistants access to Naver Maps search and place information.',
+      href: 'https://github.com/YatinKare/Naver-Maps-MCP',
+    },
+    {
+      number: '07', name: 'Offload', meta: 'Swift · iOS',
+      description: 'Swipe through iPhone photos and archive originals to an external drive.',
+      href: 'https://github.com/YatinKare/offload',
+    },
   ];
 
   let emailLabel = 'Copy my email';
