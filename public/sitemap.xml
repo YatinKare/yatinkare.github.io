@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://yatinkare.com/blog/</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -54,6 +54,17 @@
       <image:loc>https://yatinkare.com/images/blog-ralph-loop-finance.png</image:loc>
       <image:title>Turning YouTube Videos into Finance Python Projects Using the Ralph Loop</image:title>
       <image:caption>A video signal becomes a recursive agent workflow and finance command-line tool.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://yatinkare.com/blog/designing-and-evaluating-agents/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yatinkare.com/images/blog-designing-evaluating-agents.png</image:loc>
+      <image:title>Designing and Evaluating Agents</image:title>
+      <image:caption>Evidence cards flow through an agent into parallel evaluations and a feedback loop.</image:caption>
     </image:image>
   </url>
 </urlset>

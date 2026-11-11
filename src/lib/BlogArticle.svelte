@@ -123,7 +123,7 @@
     <article id="article-body" class="article-body markdown-body">{@html post.html}</article>
 
     <section class="article-end">
-      <div class="end-links"><a href="/blog">← All writing</a><a href={post.substack} target="_blank" rel="noreferrer">Read on Substack ↗</a></div>
+      <div class="end-links"><a href="/blog">← All writing</a>{#if post.substack}<a href={post.substack} target="_blank" rel="noreferrer">Read on Substack ↗</a>{/if}</div>
       <a class="author-card" href="/">
         <img src="/images/yatin-kare-software-engineer.jpg" alt="Yatin Kare" />
         <span><small>About the author</small><strong>Yatin Kare</strong><p>Software engineer building AI-assisted products, cloud systems, and useful tools.</p><b>More about me ↗</b></span>
