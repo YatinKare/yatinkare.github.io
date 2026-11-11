@@ -4,7 +4,7 @@ date: 2026-09-20
 description: A reflection of myself during my time abroad.
 hero: /images/blog-first-24-days-in-korea-sept5-seoul-fireworks.jpg
 heroAlt: September 5th Fireworks in Seoul, KR
-featured: true
+featured: false
 draft: false
 substack: https://yatinx.substack.com/p/my-first-24-days-in-korea
 ---
