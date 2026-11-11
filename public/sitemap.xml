@@ -63,7 +63,7 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://yatinkare.com/images/blog-designing-evaluating-agents.png</image:loc>
-      <image:title>Designing and Evaluating Agents</image:title>
+      <image:title>Learning About Agent Evals: Comparing T3 Code with My Internship Project</image:title>
       <image:caption>Evidence cards flow through an agent into parallel evaluations and a feedback loop.</image:caption>
     </image:image>
   </url>
